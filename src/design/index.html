@@ -1,0 +1,491 @@
+<!doctype html>
+
+<html class="" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Multimedia Platform</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#39E079',
+              'background-light': '#f6f8f7',
+              'background-dark': '#122017',
+              'surface-light': '#FFFFFF',
+              'surface-dark': '#1E1E1E',
+              'on-surface-light': '#212121',
+              'on-surface-dark': '#E0E0E0',
+              'on-surface-secondary-light': '#757575',
+              'on-surface-secondary-dark': '#BDBDBD',
+              'accent-video': '#F44336',
+              'accent-images': '#9C27B0',
+              'accent-docs': '#2196F3',
+              'accent-music': '#FF9800',
+            },
+            fontFamily: { display: 'Be Vietnam Pro' },
+            borderRadius: { DEFAULT: '0.25rem', lg: '0.5rem', xl: '0.75rem', full: '9999px' },
+          },
+        },
+      }
+    </script>
+  </head>
+  <body
+    class="font-display bg-background-light dark:bg-background-dark text-on-surface-light dark:text-on-surface-dark"
+  >
+    <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- TopNavBar -->
+        <header
+          class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap bg-surface-light dark:bg-surface-dark px-6 sm:px-10 lg:px-20 py-3 shadow-md"
+        >
+          <div class="flex items-center gap-8">
+            <div class="flex items-center gap-3 text-primary">
+              <span class="material-symbols-outlined text-3xl"> widgets </span>
+              <h2
+                class="text-on-surface-light dark:text-on-surface-dark text-xl font-bold leading-tight tracking-[-0.015em] hidden sm:block"
+              >
+                MediaHub
+              </h2>
+            </div>
+            <nav class="hidden md:flex items-center gap-6">
+              <a
+                class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal"
+                href="#"
+                >Video</a
+              >
+              <a
+                class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal"
+                href="#"
+                >Images</a
+              >
+              <a
+                class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal"
+                href="#"
+                >Documents</a
+              >
+              <a
+                class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal"
+                href="#"
+                >Music</a
+              >
+            </nav>
+          </div>
+          <div class="flex flex-1 justify-end items-center gap-4">
+            <label class="relative flex-1 max-w-xs hidden sm:flex">
+              <div
+                class="absolute inset-y-0 left-0 flex items-center pl-3 text-on-surface-secondary-light dark:text-on-surface-secondary-dark"
+              >
+                <span class="material-symbols-outlined">search</span>
+              </div>
+              <input
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full text-on-surface-light dark:text-on-surface-dark border-none bg-background-light dark:bg-background-dark focus:ring-2 focus:ring-primary h-10 placeholder:text-on-surface-secondary-light dark:placeholder:text-on-surface-secondary-dark pl-10 pr-4 text-sm font-normal leading-normal"
+                placeholder="Search content..."
+                value=""
+              />
+            </label>
+            <button
+              class="flex sm:hidden items-center justify-center rounded-full h-10 w-10 bg-transparent text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:bg-primary/10"
+            >
+              <span class="material-symbols-outlined">search</span>
+            </button>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              data-alt="User avatar image with an abstract colorful pattern"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYPrfeJBiLhGolSDEyqm3CVf7wtx_0laWJMu-5n69Tf7tHwxllSa9kyDlyVcDYWBCZ-GiMt5DYB8LopVXV5qxb0M2KSyzjyJTcegvrHubAJYn9J1kZkxJMZqJHPTDyiDiba4dwTRKMtZvFItdWEtalet9JswTf_o0m1OE-HAZf_EU0_So8o1T13YmxJ8nzuHLAtzeSz57WX2DkL3xva1WESoYvjJOoFVETf349wMw4_xkwC1SMpYEJHXCoKYz6PVGXvTpqdzJPOlIA');
+              "
+            ></div>
+          </div>
+        </header>
+        <main class="px-6 sm:px-10 lg:px-20 py-5">
+          <div class="flex flex-col max-w-7xl mx-auto">
+            <!-- Hero Section -->
+            <div
+              class="flex flex-col md:flex-row gap-8 px-4 py-10 rounded-xl bg-surface-light dark:bg-surface-dark shadow-sm my-4"
+            >
+              <div class="flex flex-col gap-4 text-left flex-1 justify-center">
+                <h1
+                  class="text-on-surface-light dark:text-on-surface-dark text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl"
+                >
+                  Your Ultimate Content Hub
+                </h1>
+                <p
+                  class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-base font-normal leading-normal"
+                >
+                  Discover, organize, and enjoy your videos, images, documents, and music all in one
+                  place. Start exploring now.
+                </p>
+                <div class="mt-4">
+                  <button
+                    class="flex max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] transition-transform duration-200 hover:scale-105"
+                  >
+                    <span class="truncate">Get Started</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="w-full md:w-1/2 bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                data-alt="A vibrant abstract gradient representing multimedia content"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAB_GgTbX1TSyvitLHm0Fkx_T9GatRl88EgvtX7n_xTFaB2ZLc_2lKv3d5_4j3RsNRyrMx1bnvZYiVmA3Ii15h5vnW6sKIPM6gKCUC4HO-IBtuJpynYYliqTtKnmoo9KqnxjtGVCm_fAXP5kloKBLT0L0mma0ZhtM-vwoobJv6c7ko61TllVAXhK30Nwi61refFA_gqRJSUP0jaqO2rLC1eN7k3JeiVOCmrwrG68JpLGHA0gZV2QIxgf8haPRGtvdnEENb7drrs4O4I');
+                "
+              ></div>
+            </div>
+            <!-- Video Section -->
+            <section class="py-8">
+              <div class="flex items-center justify-between px-4 pb-4">
+                <h2
+                  class="text-on-surface-light dark:text-on-surface-dark text-[22px] font-bold leading-tight tracking-[-0.015em] flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined text-accent-video">movie</span>Recently
+                  Added Videos
+                </h2>
+                <a class="text-primary text-sm font-bold hover:underline" href="#">View All</a>
+              </div>
+              <div
+                class="flex overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden"
+              >
+                <div class="flex items-stretch p-4 gap-6">
+                  <div
+                    class="flex h-full flex-1 flex-col gap-4 rounded-xl bg-surface-light dark:bg-surface-dark shadow-lg min-w-64 transform transition-transform duration-200 hover:-translate-y-1"
+                  >
+                    <div
+                      class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-t-xl relative"
+                      data-alt="Thumbnail of a mountain adventure video"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfKh5qS93lStUinj5sq8tvQA72SYjBLflWKSFQSwnlauCcsV4KQ4OKJL_Cd-NihhGVqpg7Pqzyv7QSxmddy2nTKOWgFFgGoQtv4KJVg52yKf9AGwtPkWC1RJU6xgDRbLyCO7b7Zs73J9L2bi26sqsTjV7DdkdBS1cVnwYQNjI_C6Awl3oTfY4_HQxIhWisw8SKoUJmh0vjw22hhevBUh3L02ygN3o5qZtTX5HsFLVq4Qn1WQu2cGyOlWi_h4VtIvjBGvHolZqCXrwY');
+                      "
+                    >
+                      <div
+                        class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+                      >
+                        <span class="material-symbols-outlined text-white text-5xl"
+                          >play_circle</span
+                        >
+                      </div>
+                    </div>
+                    <div class="flex flex-col flex-1 p-4 pt-0">
+                      <p
+                        class="text-on-surface-light dark:text-on-surface-dark text-base font-medium leading-normal"
+                      >
+                        Mountain Adventure
+                      </p>
+                      <p
+                        class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-sm font-normal leading-normal"
+                      >
+                        12:34
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex h-full flex-1 flex-col gap-4 rounded-xl bg-surface-light dark:bg-surface-dark shadow-lg min-w-64 transform transition-transform duration-200 hover:-translate-y-1"
+                  >
+                    <div
+                      class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-t-xl relative"
+                      data-alt="Thumbnail of a city timelapse video"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLP4YyK5gTWstXbtzF07jGksLUAcUG_jQuwzMtQ69T4BCEwFcG8ILve9rLw31yiWRH-M9PmZNhz-X29_ZIMMxKYCkLMlXY-AWm1A6SdEBnZTWTFOWrDN7TMNJ-D2_-xy_9HhQ80Vs3NvFtNEfYZgi6hLDMdBu_Wfhm4XTa8cqYdt1llTC6MhcmP22vY5MfHFcKdGMp-_cBM0NmTrCcP-GZoZSLuiJTcpl3tT2cjdTpKR9WF7TBEilniCyM67YFXmLKynNKsqmbRgDv');
+                      "
+                    >
+                      <div
+                        class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+                      >
+                        <span class="material-symbols-outlined text-white text-5xl"
+                          >play_circle</span
+                        >
+                      </div>
+                    </div>
+                    <div class="flex flex-col flex-1 p-4 pt-0">
+                      <p
+                        class="text-on-surface-light dark:text-on-surface-dark text-base font-medium leading-normal"
+                      >
+                        City Timelapse
+                      </p>
+                      <p
+                        class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-sm font-normal leading-normal"
+                      >
+                        05:12
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex h-full flex-1 flex-col gap-4 rounded-xl bg-surface-light dark:bg-surface-dark shadow-lg min-w-64 transform transition-transform duration-200 hover:-translate-y-1"
+                  >
+                    <div
+                      class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-t-xl relative"
+                      data-alt="Thumbnail of a cooking tutorial video"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgl3L1OG0RApex2hi6v4jiiGWaxWLoTZEquPJ95oEQUkmQnMaC75AZ4Cr_dMTd-Kdv0YN6xboXoy5qT4uotB2gL_Z1JMetmjisaB1oNMBekif1xmKOlsp65R0ijH7hZokcqzoahycGSSRQU2V24H_AWnrO4VL5tEMRzQSk-aDmogyPg8MRR9q2oy0tVKNNBfAJ80dbK3eYWvRy7joQlnk9RsSfJrad7cAaB72JIaUjnhMfrvKazA7iYA91q07U-iqHPV45RU0rcrYs');
+                      "
+                    >
+                      <div
+                        class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+                      >
+                        <span class="material-symbols-outlined text-white text-5xl"
+                          >play_circle</span
+                        >
+                      </div>
+                    </div>
+                    <div class="flex flex-col flex-1 p-4 pt-0">
+                      <p
+                        class="text-on-surface-light dark:text-on-surface-dark text-base font-medium leading-normal"
+                      >
+                        Pasta Making 101
+                      </p>
+                      <p
+                        class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-sm font-normal leading-normal"
+                      >
+                        22:01
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex h-full flex-1 flex-col gap-4 rounded-xl bg-surface-light dark:bg-surface-dark shadow-lg min-w-64 transform transition-transform duration-200 hover:-translate-y-1"
+                  >
+                    <div
+                      class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-t-xl relative"
+                      data-alt="Thumbnail of an acoustic music session video"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQuUZSzse6qLLHOp1zPS-pq0PLPtec0WbC_UoPZ1c5NN8FGpWrjUecvXrFJVNAfm3yjISRApTaNKMqjOdtgS-MU1WQJ0Ua760aKckj6LYKMyLwT8tGVDwTJu_udOFldeKUs79NYSeSDEFwQVcVfSeMMT7qtNhQOvKHIe2Oyo9h8-bu_Gj4TwyKjk1UxVpTkaZsrIVsW-5In-OyMWsGFMULWTrJ3e7qI6kwI_XHSFCgAs3NQFOqmA4hePjR7fs-vmwQ6GsEOIPOfGUM');
+                      "
+                    >
+                      <div
+                        class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+                      >
+                        <span class="material-symbols-outlined text-white text-5xl"
+                          >play_circle</span
+                        >
+                      </div>
+                    </div>
+                    <div class="flex flex-col flex-1 p-4 pt-0">
+                      <p
+                        class="text-on-surface-light dark:text-on-surface-dark text-base font-medium leading-normal"
+                      >
+                        Acoustic Session
+                      </p>
+                      <p
+                        class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-sm font-normal leading-normal"
+                      >
+                        03:56
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- Images Section -->
+            <section class="py-8">
+              <div class="flex items-center justify-between px-4 pb-4">
+                <h2
+                  class="text-on-surface-light dark:text-on-surface-dark text-[22px] font-bold leading-tight tracking-[-0.015em] flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined text-accent-images">photo_library</span>New
+                  Images
+                </h2>
+                <a class="text-primary text-sm font-bold hover:underline" href="#">View All</a>
+              </div>
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+                <div
+                  class="aspect-square bg-center bg-no-repeat bg-cover rounded-xl shadow-lg transform transition-transform duration-200 hover:scale-105"
+                  data-alt="A colorful abstract geometric pattern"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqlH91IVXqL7EmLS2AuStEo3CpVUA7b8PhMnumb2M5oIv-h3Wm29sBDgooZEIAYaHTt6DT7b_bpnM1Wfht1oQ0yp3xaNPNYFKFIOy6Snl0jufXKIOm0-nIynanalNQ7Nw9y8XNuf_h5GV6UM8US2zZqIoaSQ_cbY-4wnxYOkfD01UbaNBa9GasdlItqPPey8xt2cFq3lEg79eYjKpHdR0UgshJYn-7qeEWmccHHW5gKdqf8hA0SecXhRxr3mvsG7mnApyYh11HQX_h');
+                  "
+                ></div>
+                <div
+                  class="aspect-square bg-center bg-no-repeat bg-cover rounded-xl shadow-lg transform transition-transform duration-200 hover:scale-105"
+                  data-alt="A vibrant landscape with mountains and a lake"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCmatAYLvti5rhgHRU68z3zgLOyZgIhey95Vks882UfiIHhbf6jTjlqxmw2Ljes6ZjQL_FQLamXgg9bc-33VGX_nGJIpOBIxnMq0A-xy1ysbfaRoaWSa5k8NbQaYdfzP2jU5T-6BzchDiF89RjAPQep_RsTdwXvBUMxTip6ppYBEE9sa_RAqRsXk7Srzv49JlxqKUKVjnzs3y6wdxLh9oUp7PosV-URRHIwKnp6b9AU2LvNiSC_T_D1GSXh0jwwYdLtUwptafcR8QF');
+                  "
+                ></div>
+                <div
+                  class="aspect-square bg-center bg-no-repeat bg-cover rounded-xl shadow-lg transform transition-transform duration-200 hover:scale-105"
+                  data-alt="A modern architectural building with glass facade"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuArxL5H9dAHI--_anPuEHaLTYjYYROFIKCusp5CNtt2f3bCe5j5V_YO0vujKLFvaOQYqgkAnHl0CUA4jrANSFcsplmjEnw1VSwyIexCiuIe9mrnFIRq-_wRVfme5E7ujsv9CrO497JehARcFILUgf5TfhcRqjqBjxkgPGSs-TuKWp9wYG5aAPcAbW8g0BVOMQeTgh_3Yk8HPh_BcALkH8oJeAMPcdb0kPtyFY9OyZ0UTaBu8mZpLJ6MNyu7ksYaHK0w9GFo1s58Cta_');
+                  "
+                ></div>
+                <div
+                  class="aspect-square bg-center bg-no-repeat bg-cover rounded-xl shadow-lg transform transition-transform duration-200 hover:scale-105"
+                  data-alt="A serene beach scene at sunset"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcIuPIM0W4hllYTj3fKQZ8nE-53-902dAu8FQOovuG9W0QMYIWcrRvWNfQZtNc25483QXNjp2F35JkHEcaqq220qT3nId54oVEk-5a5YKPhlyfsd_-wxudToUAY7vWVVEGYpVLBR0gJb_1UYTrXcdXZxOG5aODGDdWi3c-D0yvdqQc2ju5so97-WbCOSwUXTS_BeLMNKPt-QSB7aGhTSPVK0d_ZHotVXgUxasNeAnUsIhhC2o5KHbctbBQ1nKOngEF6H6hWNQF0nsz');
+                  "
+                ></div>
+              </div>
+            </section>
+            <!-- Documents and Music Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 py-8">
+              <!-- Documents Section -->
+              <section>
+                <div class="flex items-center justify-between px-4 pb-4">
+                  <h2
+                    class="text-on-surface-light dark:text-on-surface-dark text-[22px] font-bold leading-tight tracking-[-0.015em] flex items-center gap-2"
+                  >
+                    <span class="material-symbols-outlined text-accent-docs">description</span
+                    >Latest Documents
+                  </h2>
+                  <a class="text-primary text-sm font-bold hover:underline" href="#">View All</a>
+                </div>
+                <div class="flex flex-col gap-4 p-4">
+                  <div
+                    class="flex items-center gap-4 p-4 rounded-xl bg-surface-light dark:bg-surface-dark shadow-lg transition-shadow hover:shadow-xl"
+                  >
+                    <span class="material-symbols-outlined text-accent-docs text-4xl"
+                      >picture_as_pdf</span
+                    >
+                    <div class="flex-1">
+                      <p class="text-on-surface-light dark:text-on-surface-dark font-medium">
+                        Project Proposal.pdf
+                      </p>
+                      <p
+                        class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-sm"
+                      >
+                        1.2 MB - Modified yesterday
+                      </p>
+                    </div>
+                    <button
+                      class="flex items-center justify-center rounded-full h-10 w-10 text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:bg-primary/10"
+                    >
+                      <span class="material-symbols-outlined">more_vert</span>
+                    </button>
+                  </div>
+                  <div
+                    class="flex items-center gap-4 p-4 rounded-xl bg-surface-light dark:bg-surface-dark shadow-lg transition-shadow hover:shadow-xl"
+                  >
+                    <span class="material-symbols-outlined text-accent-docs text-4xl">article</span>
+                    <div class="flex-1">
+                      <p class="text-on-surface-light dark:text-on-surface-dark font-medium">
+                        Meeting Notes.docx
+                      </p>
+                      <p
+                        class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-sm"
+                      >
+                        45 KB - Modified 3 days ago
+                      </p>
+                    </div>
+                    <button
+                      class="flex items-center justify-center rounded-full h-10 w-10 text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:bg-primary/10"
+                    >
+                      <span class="material-symbols-outlined">more_vert</span>
+                    </button>
+                  </div>
+                </div>
+              </section>
+              <!-- Music Section -->
+              <section>
+                <div class="flex items-center justify-between px-4 pb-4">
+                  <h2
+                    class="text-on-surface-light dark:text-on-surface-dark text-[22px] font-bold leading-tight tracking-[-0.015em] flex items-center gap-2"
+                  >
+                    <span class="material-symbols-outlined text-accent-music">music_note</span
+                    >Discover Music
+                  </h2>
+                  <a class="text-primary text-sm font-bold hover:underline" href="#">View All</a>
+                </div>
+                <div class="flex flex-col gap-4 p-4">
+                  <div
+                    class="flex items-center gap-4 p-4 rounded-xl bg-surface-light dark:bg-surface-dark shadow-lg transition-shadow hover:shadow-xl"
+                  >
+                    <div
+                      class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
+                      data-alt="Album art for 'Starlight Echoes'"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5mlXrH-LuLc68-_P3kkxddPp85VPJqnjrs-QRQxGCeMOEPoOR4WFqMIH_3dd0XBX10A1UrzJa_88ea-VZsnAAyTHxja38VsB3OYPiaiXcaVdOIIPY2n7ZTMTbM0ps7Rb-5L1NpsL_C4hV1xJ6gkwav3yZw5fp1uROLeIegr6ANh866bbq61ASJ5GpWt_xAuouz_6hXhH5PS_mLEG_AvZlp1pXxgOJkehQBfgCBpSKdxNLoxUrDDuuCh4U4oHQtXgkkqAmVxYq_ar7');
+                      "
+                    ></div>
+                    <div class="flex-1">
+                      <p class="text-on-surface-light dark:text-on-surface-dark font-medium">
+                        Starlight Echoes
+                      </p>
+                      <p
+                        class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-sm"
+                      >
+                        Nova Bloom
+                      </p>
+                    </div>
+                    <button
+                      class="flex items-center justify-center rounded-full h-10 w-10 text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:bg-primary/10 hover:text-primary"
+                    >
+                      <span class="material-symbols-outlined text-3xl">play_circle</span>
+                    </button>
+                  </div>
+                  <div
+                    class="flex items-center gap-4 p-4 rounded-xl bg-surface-light dark:bg-surface-dark shadow-lg transition-shadow hover:shadow-xl"
+                  >
+                    <div
+                      class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
+                      data-alt="Album art for 'Ocean Drive'"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHIlqVifhsYlWNnWGJ402ncNXIddyYW5ijBYdYz2jxNNv3X7h42pj2Oct3KXESic_IItV1Nz8Wa_TDQnmV03Nu3Z0dpfakKjl3xA7tqHpgAFHj98xBJ8SJ7vs3Zx4U7dbbdnnJlAWXO61w_mLKL-euTKAfNVwlxvdMSu0n-f19tKhteNawT0OmKoh2Fw8U1HMoebl47-0z3VHg1iVSlUXGrU5kYR1pCRf8rD7mkOqNaz-_PL58esHBUPYAeApD9PyEBNQjRgMUX4Fv');
+                      "
+                    ></div>
+                    <div class="flex-1">
+                      <p class="text-on-surface-light dark:text-on-surface-dark font-medium">
+                        Ocean Drive
+                      </p>
+                      <p
+                        class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-sm"
+                      >
+                        The Midnight Cruisers
+                      </p>
+                    </div>
+                    <button
+                      class="flex items-center justify-center rounded-full h-10 w-10 text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:bg-primary/10 hover:text-primary"
+                    >
+                      <span class="material-symbols-outlined text-3xl">play_circle</span>
+                    </button>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </main>
+        <!-- Footer -->
+        <footer class="bg-surface-light dark:bg-surface-dark mt-auto">
+          <div class="max-w-7xl mx-auto py-8 px-6 sm:px-10 lg:px-20">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p
+                class="text-sm text-on-surface-secondary-light dark:text-on-surface-secondary-dark"
+              >
+                © 2024 MediaHub. All Rights Reserved.
+              </p>
+              <div class="flex gap-6">
+                <a
+                  class="text-sm text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:text-primary"
+                  href="#"
+                  >About Us</a
+                >
+                <a
+                  class="text-sm text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:text-primary"
+                  href="#"
+                  >Help</a
+                >
+                <a
+                  class="text-sm text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:text-primary"
+                  href="#"
+                  >Terms of Service</a
+                >
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

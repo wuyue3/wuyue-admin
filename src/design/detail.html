@@ -1,0 +1,416 @@
+<!doctype html>
+<html class="" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Video Player - Multimedia Platform</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#39E079',
+              'background-light': '#f6f8f7',
+              'background-dark': '#122017',
+              'surface-light': '#FFFFFF',
+              'surface-dark': '#1E1E1E',
+              'on-surface-light': '#212121',
+              'on-surface-dark': '#E0E0E0',
+              'on-surface-secondary-light': '#757575',
+              'on-surface-secondary-dark': '#BDBDBD',
+              'accent-video': '#F44336',
+              'accent-images': '#9C27B0',
+              'accent-docs': '#2196F3',
+              'accent-music': '#FF9800',
+            },
+            fontFamily: { display: 'Be Vietnam Pro' },
+            borderRadius: { DEFAULT: '0.25rem', lg: '0.5rem', xl: '0.75rem', full: '9999px' },
+          },
+        },
+      }
+    </script>
+  </head>
+  <body
+    class="font-display bg-background-light dark:bg-background-dark text-on-surface-light dark:text-on-surface-dark"
+  >
+    <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+      <div class="layout-container flex h-full grow flex-col">
+        <header
+          class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap bg-surface-light dark:bg-surface-dark px-6 sm:px-10 lg:px-20 py-3 shadow-md"
+        >
+          <div class="flex items-center gap-8">
+            <a class="flex items-center gap-3 text-primary" href="#">
+              <span class="material-symbols-outlined text-3xl">widgets</span>
+              <h2
+                class="text-on-surface-light dark:text-on-surface-dark text-xl font-bold leading-tight tracking-[-0.015em] hidden sm:block"
+              >
+                MediaHub
+              </h2>
+            </a>
+            <nav class="hidden md:flex items-center gap-6">
+              <a class="text-primary dark:text-primary text-sm font-medium leading-normal" href="#"
+                >Video</a
+              >
+              <a
+                class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal"
+                href="#"
+                >Images</a
+              >
+              <a
+                class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal"
+                href="#"
+                >Documents</a
+              >
+              <a
+                class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal"
+                href="#"
+                >Music</a
+              >
+            </nav>
+          </div>
+          <div class="flex flex-1 justify-end items-center gap-4">
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              data-alt="User avatar image with an abstract colorful pattern"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYPrfeJBiLhGolSDEyqm3CVf7wtx_0laWJMu-5n69Tf7tHwxllSa9kyDlyVcDYWBCZ-GiMt5DYB8LopVXV5qxb0M2KSyzjyJTcegvrHubAJYn9J1kZkxJMZqJHPTDyiDiba4dwTRKMtZvFItdWEtalet9JswTf_o0m1OE-HAZf_EU0_So8o1T13YmxJ8nzuHLAtzeSz57WX2DkL3xva1WESoYvjJOoFVETf349wMw4_xkwC1SMpYEJHXCoKYz6PVGXvTpqdzJPOlIA');
+              "
+            ></div>
+          </div>
+        </header>
+        <main class="flex-1 w-full py-5">
+          <div
+            class="flex flex-col lg:flex-row gap-6 px-6 sm:px-10 lg:px-20 max-w-[100rem] mx-auto"
+          >
+            <div class="flex-1 lg:max-w-4xl">
+              <div class="aspect-video w-full bg-black rounded-xl overflow-hidden shadow-lg">
+                <div
+                  class="w-full h-full bg-center bg-no-repeat bg-cover flex items-center justify-center text-white"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfKh5qS93lStUinj5sq8tvQA72SYjBLflWKSFQSwnlauCcsV4KQ4OKJL_Cd-NihhGVqpg7Pqzyv7QSxmddy2nTKOWgFFgGoQtv4KJVg52yKf9AGwtPkWC1RJU6xgDRbLyCO7b7Zs73J9L2bi26sqsTjV7DdkdBS1cVnwYQNjI_C6Awl3oTfY4_HQxIhWisw8SKoUJmh0vjw22hhevBUh3L02ygN3o5qZtTX5HsFLVq4Qn1WQu2cGyOlWi_h4VtIvjBGvHolZqCXrwY');
+                  "
+                >
+                  <button
+                    class="flex items-center justify-center p-0 text-white transition-transform duration-300 ease-in-out bg-black/50 rounded-full w-20 h-20 hover:scale-110 hover:bg-primary/80"
+                  >
+                    <span class="material-symbols-outlined text-6xl">play_arrow</span>
+                  </button>
+                </div>
+              </div>
+              <div class="py-4">
+                <h1
+                  class="text-on-surface-light dark:text-on-surface-dark text-2xl sm:text-3xl font-bold leading-tight tracking-[-0.015em]"
+                >
+                  Mountain Adventure
+                </h1>
+                <p
+                  class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-sm mt-1"
+                >
+                  2.1M views • 3 days ago
+                </p>
+                <div
+                  class="flex items-center justify-between mt-4 py-2 border-y border-on-surface-light/10 dark:border-on-surface-dark/10"
+                >
+                  <div class="flex items-center gap-4">
+                    <button
+                      class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full hover:bg-on-surface-light/5 dark:hover:bg-on-surface-dark/5"
+                    >
+                      <span class="material-symbols-outlined">thumb_up</span>
+                      <span>125K</span>
+                    </button>
+                    <button
+                      class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full hover:bg-on-surface-light/5 dark:hover:bg-on-surface-dark/5"
+                    >
+                      <span class="material-symbols-outlined">thumb_down</span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button
+                      class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full hover:bg-on-surface-light/5 dark:hover:bg-on-surface-dark/5"
+                    >
+                      <span class="material-symbols-outlined">share</span>
+                      <span>Share</span>
+                    </button>
+                    <button
+                      class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full hover:bg-on-surface-light/5 dark:hover:bg-on-surface-dark/5"
+                    >
+                      <span class="material-symbols-outlined">playlist_add</span>
+                      <span>Save</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-on-surface-light/5 dark:bg-on-surface-dark/5 p-4 rounded-xl">
+                <p
+                  class="text-on-surface-light dark:text-on-surface-dark text-sm font-medium leading-relaxed"
+                >
+                  Join us on an epic journey through breathtaking mountain landscapes. This
+                  adventure documents our climb to the summit, showcasing stunning vistas,
+                  challenging terrains, and the raw beauty of nature. Perfect for thrill-seekers and
+                  nature lovers alike.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span
+                    class="bg-on-surface-light/10 dark:bg-on-surface-dark/10 text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-xs font-medium px-3 py-1.5 rounded-full"
+                    >#adventure</span
+                  >
+                  <span
+                    class="bg-on-surface-light/10 dark:bg-on-surface-dark/10 text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-xs font-medium px-3 py-1.5 rounded-full"
+                    >#mountains</span
+                  >
+                  <span
+                    class="bg-on-surface-light/10 dark:bg-on-surface-dark/10 text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-xs font-medium px-3 py-1.5 rounded-full"
+                    >#hiking</span
+                  >
+                  <span
+                    class="bg-on-surface-light/10 dark:bg-on-surface-dark/10 text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-xs font-medium px-3 py-1.5 rounded-full"
+                    >#nature</span
+                  >
+                </div>
+              </div>
+              <div class="py-6">
+                <h3
+                  class="text-on-surface-light dark:text-on-surface-dark text-xl font-bold leading-tight tracking-[-0.015em]"
+                >
+                  Comments (24)
+                </h3>
+                <div class="mt-4 flex items-start gap-4">
+                  <div
+                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYPrfeJBiLhGolSDEyqm3CVf7wtx_0laWJMu-5n69Tf7tHwxllSa9kyDlyVcDYWBCZ-GiMt5DYB8LopVXV5qxb0M2KSyzjyJTcegvrHubAJYn9J1kZkxJMZqJHPTDyiDiba4dwTRKMtZvFItdWEtalet9JswTf_o0m1OE-HAZf_EU0_So8o1T13YmxJ8nzuHLAtzeSz57WX2DkL3xva1WESoYvjJOoFVETf349wMw4_xkwC1SMpYEJHXCoKYz6PVGXvTpqdzJPOlIA');
+                    "
+                  ></div>
+                  <input
+                    class="form-input flex-1 border-0 border-b border-on-surface-light/20 dark:border-on-surface-dark/20 bg-transparent focus:ring-0 focus:border-primary pb-2 text-sm"
+                    placeholder="Add a comment..."
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="lg:w-96 flex-shrink-0">
+              <div class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-md">
+                <h3 class="text-on-surface-light dark:text-on-surface-dark text-lg font-bold">
+                  Up Next: Playlist
+                </h3>
+                <div class="flex flex-col gap-3 mt-4 max-h-[40rem] overflow-y-auto">
+                  <div class="flex gap-3 items-start p-2 rounded-lg bg-primary/10">
+                    <div
+                      class="w-32 aspect-video bg-cover bg-center rounded-md flex-shrink-0"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfKh5qS93lStUinj5sq8tvQA72SYjBLflWKSFQSwnlauCcsV4KQ4OKJL_Cd-NihhGVqpg7Pqzyv7QSxmddy2nTKOWgFFgGoQtv4KJVg52yKf9AGwtPkWC1RJU6xgDRbLyCO7b7Zs73J9L2bi26sqsTjV7DdkdBS1cVnwYQNjI_C6Awl3oTfY4_HQxIhWisw8SKoUJmh0vjw22hhevBUh3L02ygN3o5qZtTX5HsFLVq4Qn1WQu2cGyOlWi_h4VtIvjBGvHolZqCXrwY');
+                      "
+                    ></div>
+                    <div class="flex flex-col">
+                      <p
+                        class="text-on-surface-light dark:text-on-surface-dark font-medium text-sm leading-tight"
+                      >
+                        Mountain Adventure
+                      </p>
+                      <p
+                        class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-xs mt-1"
+                      >
+                        Now Playing
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    class="flex gap-3 items-start p-2 rounded-lg hover:bg-on-surface-light/5 dark:hover:bg-on-surface-dark/5"
+                    href="#"
+                  >
+                    <div
+                      class="w-32 aspect-video bg-cover bg-center rounded-md flex-shrink-0"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLP4YyK5gTWstXbtzF07jGksLUAcUG_jQuwzMtQ69T4BCEwFcG8ILve9rLw31yiWRH-M9PmZNhz-X29_ZIMMxKYCkLMlXY-AWm1A6SdEBnZTWTFOWrDN7TMNJ-D2_-xy_9HhQ80Vs3NvFtNEfYZgi6hLDMdBu_Wfhm4XTa8cqYdt1llTC6MhcmP22vY5MfHFcKdGMp-_cBM0NmTrCcP-GZoZSLuiJTcpl3tT2cjdTpKR9WF7TBEilniCyM67YFXmLKynNKsqmbRgDv');
+                      "
+                    >
+                      <span
+                        class="float-right m-1 bg-black/70 text-white text-xs font-medium px-1.5 py-0.5 rounded"
+                        >05:12</span
+                      >
+                    </div>
+                    <div class="flex flex-col">
+                      <p
+                        class="text-on-surface-light dark:text-on-surface-dark font-medium text-sm leading-tight"
+                      >
+                        City Timelapse
+                      </p>
+                      <p
+                        class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-xs mt-1"
+                      >
+                        Channel Name
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                    class="flex gap-3 items-start p-2 rounded-lg hover:bg-on-surface-light/5 dark:hover:bg-on-surface-dark/5"
+                    href="#"
+                  >
+                    <div
+                      class="w-32 aspect-video bg-cover bg-center rounded-md flex-shrink-0"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgl3L1OG0RApex2hi6v4jiiGWaxWLoTZEquPJ95oEQUkmQnMaC75AZ4Cr_dMTd-Kdv0YN6xboXoy5qT4uotB2gL_Z1JMetmjisaB1oNMBekif1xmKOlsp65R0ijH7hZokcqzoahycGSSRQU2V24H_AWnrO4VL5tEMRzQSk-aDmogyPg8MRR9q2oy0tVKNNBfAJ80dbK3eYWvRy7joQlnk9RsSfJrad7cAaB72JIaUjnhMfrvKazA7iYA91q07U-iqHPV45RU0rcrYs');
+                      "
+                    >
+                      <span
+                        class="float-right m-1 bg-black/70 text-white text-xs font-medium px-1.5 py-0.5 rounded"
+                        >22:01</span
+                      >
+                    </div>
+                    <div class="flex flex-col">
+                      <p
+                        class="text-on-surface-light dark:text-on-surface-dark font-medium text-sm leading-tight"
+                      >
+                        Pasta Making 101
+                      </p>
+                      <p
+                        class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-xs mt-1"
+                      >
+                        Cooking Channel
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                    class="flex gap-3 items-start p-2 rounded-lg hover:bg-on-surface-light/5 dark:hover:bg-on-surface-dark/5"
+                    href="#"
+                  >
+                    <div
+                      class="w-32 aspect-video bg-cover bg-center rounded-md flex-shrink-0"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQuUZSzse6qLLHOp1zPS-pq0PLPtec0WbC_UoPZ1c5NN8FGpWrjUecvXrFJVNAfm3yjISRApTaNKMqjOdtgS-MU1WQJ0Ua760aKckj6LYKMyLwT8tGVDwTJu_udOFldeKUs79NYSeSDEFwQVcVfSeMMT7qtNhQOvKHIe2Oyo9h8-bu_Gj4TwyKjk1UxVpTkaZsrIVsW-5In-OyMWsGFMULWTrJ3e7qI6kwI_XHSFCgAs3NQFOqmA4hePjR7fs-vmwQ6GsEOIPOfGUM');
+                      "
+                    >
+                      <span
+                        class="float-right m-1 bg-black/70 text-white text-xs font-medium px-1.5 py-0.5 rounded"
+                        >03:56</span
+                      >
+                    </div>
+                    <div class="flex flex-col">
+                      <p
+                        class="text-on-surface-light dark:text-on-surface-dark font-medium text-sm leading-tight"
+                      >
+                        Acoustic Session
+                      </p>
+                      <p
+                        class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-xs mt-1"
+                      >
+                        MusicVibes
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="mt-6">
+                <h3 class="text-on-surface-light dark:text-on-surface-dark text-lg font-bold">
+                  Recommended Videos
+                </h3>
+                <div class="grid grid-cols-1 @md:grid-cols-2 lg:grid-cols-1 gap-4 mt-4">
+                  <a class="flex flex-col gap-2 group" href="#">
+                    <div
+                      class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg overflow-hidden shadow-md"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCmatAYLvti5rhgHRU68z3zgLOyZgIhey95Vks882UfiIHhbf6jTjlqxmw2Ljes6ZjQL_FQLamXgg9bc-33VGX_nGJIpOBIxnMq0A-xy1ysbfaRoaWSa5k8NbQaYdfzP2jU5T-6BzchDiF89RjAPQep_RsTdwXvBUMxTip6ppYBEE9sa_RAqRsXk7Srzv49JlxqKUKVjnzs3y6wdxLh9oUp7PosV-URRHIwKnp6b9AU2LvNiSC_T_D1GSXh0jwwYdLtUwptafcR8QF');
+                      "
+                    ></div>
+                    <div>
+                      <p
+                        class="text-on-surface-light dark:text-on-surface-dark text-sm font-medium leading-normal group-hover:text-primary"
+                      >
+                        Nature's Beauty
+                      </p>
+                      <p
+                        class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-xs"
+                      >
+                        Explore Docs • 1M views
+                      </p>
+                    </div>
+                  </a>
+                  <a class="flex flex-col gap-2 group" href="#">
+                    <div
+                      class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg overflow-hidden shadow-md"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuArxL5H9dAHI--_anPuEHaLTYjYYROFIKCusp5CNtt2f3bCe5j5V_YO0vujKLFvaOQYqgkAnHl0CUA4jrANSFcsplmjEnw1VSwyIexCiuIe9mrnFIRq-_wRVfme5E7ujsv9CrO497JehARcFILUgf5TfhcRqjqBjxkgPGSs-TuKWp9wYG5aAPcAbW8g0BVOMQeTgh_3Yk8HPh_BcALkH8oJeAMPcdb0kPtyFY9OyZ0UTaBu8mZpLJ6MNyu7ksYaHK0w9GFo1s58Cta_');
+                      "
+                    ></div>
+                    <div>
+                      <p
+                        class="text-on-surface-light dark:text-on-surface-dark text-sm font-medium leading-normal group-hover:text-primary"
+                      >
+                        Exploring Modern Architecture
+                      </p>
+                      <p
+                        class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-xs"
+                      >
+                        ArchDaily • 500k views
+                      </p>
+                    </div>
+                  </a>
+                  <a class="flex flex-col gap-2 group" href="#">
+                    <div
+                      class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg overflow-hidden shadow-md"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcIuPIM0W4hllYTj3fKQZ8nE-53-902dAu8FQOovuG9W0QMYIWcrRvWNfQZtNc25483QXNjp2F35JkHEcaqq220qT3nId54oVEk-5a5YKPhlyfsd_-wxudToUAY7vWVVEGYpVLBR0gJb_1UYTrXcdXZxOG5aODGDdWi3c-D0yvdqQc2ju5so97-WbCOSwUXTS_BeLMNKPt-QSB7aGhTSPVK0d_ZHotVXgUxasNeAnUsIhhC2o5KHbctbBQ1nKOngEF6H6hWNQF0nsz');
+                      "
+                    ></div>
+                    <div>
+                      <p
+                        class="text-on-surface-light dark:text-on-surface-dark text-sm font-medium leading-normal group-hover:text-primary"
+                      >
+                        Sunset Relaxation
+                      </p>
+                      <p
+                        class="text-on-surface-secondary-light dark:text-on-surface-secondary-dark text-xs"
+                      >
+                        Mindful Moments • 2.5M views
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer class="bg-surface-light dark:bg-surface-dark mt-auto">
+          <div class="max-w-[100rem] mx-auto py-8 px-6 sm:px-10 lg:px-20">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p
+                class="text-sm text-on-surface-secondary-light dark:text-on-surface-secondary-dark"
+              >
+                © 2024 MediaHub. All Rights Reserved.
+              </p>
+              <div class="flex gap-6">
+                <a
+                  class="text-sm text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:text-primary"
+                  href="#"
+                  >About Us</a
+                >
+                <a
+                  class="text-sm text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:text-primary"
+                  href="#"
+                  >Help</a
+                >
+                <a
+                  class="text-sm text-on-surface-secondary-light dark:text-on-surface-secondary-dark hover:text-primary"
+                  href="#"
+                  >Terms of Service</a
+                >
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

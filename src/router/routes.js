@@ -1,7 +1,7 @@
 import LoginView from '../views/login/index.vue'
 import HomeView from '../views/home/index.vue'
 import NotFoundView from '../views/404/index.vue'
-
+import IndexIcon from '@/components/icons/IndexIcon.vue'
 const routes = [
   {
     path: '/',
@@ -9,7 +9,7 @@ const routes = [
     component: HomeView,
     meta: {
       title: '首页',
-      icon: null,
+      icon: IndexIcon,
       hidden: false,
     },
   },
@@ -37,6 +37,41 @@ const routes = [
     path: '/document',
     name: 'document',
     component: () => import('../views/document/index.vue'),
+    meta: {
+      title: '文档',
+      icon: null,
+      hidden: false,
+    },
+  },
+  {
+    path: '/movie',
+    name: 'movie',
+    component: () => import('../views/movie/index.vue'),
+    meta: {
+      title: '视频',
+      icon: null,
+      hidden: false,
+    },
+  },
+  {
+    path: '/music',
+    name: 'music',
+    component: () => import('../views/music/index.vue'),
+    meta: {
+      title: '音乐',
+      icon: null,
+      hidden: false,
+    },
+  },
+  {
+    path: '/picture',
+    name: 'picture',
+    component: () => import('../views/picture/index.vue'),
+    meta: {
+      title: '图片',
+      icon: null,
+      hidden: false,
+    },
   },
 ]
 
