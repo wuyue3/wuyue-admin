@@ -23,4 +23,17 @@ export default defineConfig([
   js.configs.recommended,
   ...pluginVue.configs['flat/essential'],
   skipFormatting,
+  // 允许小写的 Vue 组件文件名
+  {
+    rules: {
+      'vue/multi-word-component-names': ['off'],
+      'vue/match-component-file-name': [
+        'error',
+        {
+          extensions: ['vue'],
+          shouldMatchCase: false,
+        },
+      ],
+    },
+  },
 ])
