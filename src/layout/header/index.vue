@@ -1,5 +1,12 @@
 <script setup>
+import { onMounted } from 'vue'
 import MenuBar from './MenuBar.vue'
+import drawImage from '@/utils/drawImage'
+
+onMounted(() => {
+  drawImage()
+  drawImage(520, 380, '#fff000')
+})
 </script>
 
 <template>
